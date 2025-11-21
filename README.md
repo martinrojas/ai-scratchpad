@@ -1,144 +1,212 @@
 # AI Scratchpad: Prompt Collection
 
-A curated collection of production-ready AI prompts for various use cases. This repository contains tested prompts for custom GPTs, Claude projects, and command-line AI assistants, designed to be used as-is, customized for specific needs, or studied as examples for learning prompt engineering.
+A curated collection of production-ready AI prompts, tools, and resources for developers, writers, and teams. This repository contains tested prompts for Claude, ChatGPT, and other AI platforms, designed to be used as-is, customized for specific needs, or studied as examples for learning prompt engineering.
 
-## Table of Contents
+## Quick Start
 
-- [Getting Started](#getting-started)
-- [Prompt Categories](#prompt-categories)
-  - [Development & Architecture](#development--architecture)
-  - [Technical Writing](#technical-writing)
-  - [Productivity](#productivity)
-  - [Terminal & CLI](#terminal--cli)
-- [Usage Guide](#usage-guide)
-- [Prompt Engineering Tips](#prompt-engineering-tips)
-- [Contributing](#contributing)
-- [License](#license)
+**New here?** Browse by use case below → Click a prompt → Follow the Quick Start in its README
 
-## Getting Started
+**Contributing?** See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
-Each prompt is organized by use case and includes:
-- **Main prompt file**: The core system prompt or instructions
-- **Knowledge documents (KD)**: Supporting context and guidelines
-- **Platform variants**: Optimized versions for different AI models (GPT-4, Claude, etc.)
+**Want to learn?** Check out the [Prompt Engineering Guide](resources/guides/prompt-engineering.md)
 
-### Quick Start
+## Prompts by Category
 
-1. Browse the [Prompt Categories](#prompt-categories) below
-2. Navigate to the prompt that fits your needs
-3. Copy the prompt file contents
-4. Customize variables or context as needed
-5. Use in your preferred AI platform
+### 🛠️ Development & Architecture
 
-## Prompt Categories
+**[UI Architect / Rubber Duck](prompts/development/ui-architect/)**
 
-### Development & Architecture
+Technical lead assistant for architecture discussions, code reviews, and design decisions
 
-#### UI Architect / Rubber Duck
-**Path**: `prompts-GPTs/ui-architect/Rubber duck - [Platform]/`
-
-A technical lead assistant for architecture discussions, code review, and design decisions.
-
-**Platforms**:
-- Claude (`Rubber duck - Claude/`)
-- GPT-4/5 (`Rubber duck - GPT5/`)
-
-**Key Features**:
-- RFC authoring guidance
-- Code quality standards
+- Architecture planning and RFC authoring
+- Code quality reviews with detailed feedback
+- Technical decision-making with trade-off analysis
 - Context-aware technical discussions
-- Response templates for consistent output
 
-**Best For**: Architecture planning, code reviews, technical decision-making, design pattern discussions
+**[Documentation Maintenance](prompts/development/documentation-maintenance/)**
 
-**Files**:
-- `RubberDuck Prompt.md` - Main system prompt
-- `KD - Context Guidelines for Technical Lead.md` - Conversation guidelines
-- `KD - Response Templates Examples Knowledge Document.md` - Output formatting
-- `KD - Code Examples Quality Standards Knowledge Document.md` - Code quality standards
-- `KD — RFC Authoring Guide.md` (GPT5 only) - RFC writing guidelines
+Standards and workflows for keeping project documentation current
 
-### Technical Writing
+- Living documentation practices
+- Documentation-as-code workflows
+- Maintenance triggers and schedules
+- Quality standards and checklists
 
-#### Universal Content System
-**Path**: `prompts-GPTs/technical-writer/`
+### ✍️ Technical Writing
 
-Comprehensive technical writing assistant with structured content architecture and quality frameworks.
+**[Universal Content System](prompts/technical-writing/universal-content-system/)**
 
-**Key Features**:
-- Multi-level technical audience adaptation
-- Consistent voice and tone matrix
-- Performance tracking metrics
-- Universal QA checklist
+Comprehensive writing assistant with multi-level audience adaptation
+
+- API documentation and developer guides
+- Technical articles and tutorials
 - Structured content architecture
+- Quality assurance framework
+- Performance tracking metrics
 
-**Best For**: Documentation writing, technical articles, developer guides, API documentation
+### 📊 Productivity
 
-**Files**:
-- `Prompt - Universal Content System.md` - Main system prompt
-- `KD - Universal Tech Levels.md` - Audience technical proficiency levels
-- `KD - Universal Voice Matrix.md` - Voice and tone guidelines
-- `KD - Universal Content Architecture.md` - Content structure framework
-- `KD - Universal QA Checklist.md` - Quality assurance standards
-- `KD - Universal Performance Tracking.md` - Metrics and improvement tracking
+**[Meeting Summary](prompts/productivity/meeting-summary/)**
 
-### Productivity
+Transform meeting transcripts into structured, actionable summaries
 
-#### Meeting Summary GPT
-**Path**: `meeting summary/Meeting Summary GPT.md`
+- Extract key decisions and action items
+- Assign ownership and track follow-ups
+- Generate shareable meeting notes
+- Works with any transcript format
 
-Generates structured, actionable meeting summaries from transcripts or notes.
+## Platform-Specific Tools
 
-**Best For**: Meeting notes processing, action item extraction, summary generation
+### [Claude Code](tools/claude-code/)
 
-### Terminal & CLI
+Custom commands and configurations for Claude Code CLI and VS Code extension
 
-#### Documentation Maintenance
-**Path**: `prompts-terminal-buddy/Documentation Maintenance.md`
+- **[reload-context](tools/claude-code/commands/reload-context.md)**: Example context-loading command
+- Custom command templates and patterns
 
-Standards and guidelines for maintaining living documentation in software projects.
+More platform integrations coming soon: Cursor, VS Code, ChatGPT configurations
 
-**Best For**: Project documentation standards, documentation maintenance workflows, team documentation guidelines
+## Resources
+
+### 📚 Guides
+
+**[Prompt Engineering Guide](resources/guides/prompt-engineering.md)**
+
+Comprehensive guide to writing effective prompts
+
+- Core principles and best practices
+- Prompt structure patterns
+- Platform-specific optimization
+- Testing and iteration strategies
+- Troubleshooting common issues
+
+### 📝 Templates
+
+Ready-to-use templates for contributing:
+
+- **[Basic Prompt Template](resources/templates/basic-prompt-template.md)** - Minimal prompt structure
+- **[Knowledge Document Template](resources/templates/knowledge-document-template.md)** - Supporting doc structure
+- **[Prompt README Template](resources/templates/prompt-readme-template.md)** - Comprehensive documentation
+- **[Tool README Template](resources/templates/tool-readme-template.md)** - Tool integration docs
+
+### 💡 Examples & Configs
+
+- **`resources/examples/`** - Real-world usage examples and workflows
+- **`resources/configs/`** - Tool configurations and setup files
 
 ## Usage Guide
 
-### Using with Custom GPTs (ChatGPT)
-
-1. Go to ChatGPT > Explore GPTs > Create
-2. Copy the main prompt into the Instructions field
-3. Upload Knowledge Documents as files in the Knowledge section
-4. Configure conversation starters based on the prompt's use case
-
 ### Using with Claude Projects
 
-1. Create a new Project in Claude
-2. Copy the main prompt and knowledge documents into Project Knowledge
-3. Start a conversation within the project context
+1. Browse to a prompt directory (e.g., [prompts/development/ui-architect/](prompts/development/ui-architect/))
+2. Open the prompt's README for specific instructions
+3. Copy `prompt.md` into Claude Project Instructions
+4. Add any `knowledge/` files to Project Knowledge
+5. Start chatting!
 
-### Using with Command-Line AI Tools
+### Using with ChatGPT Custom GPTs
 
-1. Copy the prompt content
-2. Save as a reusable template or command
-3. Pass to your CLI tool (e.g., `claude-cli`, `chatgpt-cli`, etc.)
+1. Choose a prompt and open its README
+2. Go to ChatGPT → Explore GPTs → Create
+3. Copy the prompt content (or `variants/gpt.md` if available) to Instructions
+4. Upload knowledge documents to the Knowledge section
+5. Configure and save your GPT
+
+### Using with Command-Line Tools
+
+```bash
+# Direct usage
+cat prompts/development/ui-architect/prompt.md | claude-cli
+
+# Or install platform-specific commands
+cp -r tools/claude-code/commands/ .claude/commands/
+```
 
 ### Customizing Prompts
 
-Most prompts include variables or sections you can customize:
+All prompts are designed to be customizable:
+
 - **Replace placeholders**: Look for `[VARIABLE]` or `{context}` markers
 - **Adjust knowledge docs**: Modify guidelines to match your standards
-- **Combine prompts**: Mix elements from different prompts for hybrid use cases
-- **Add domain knowledge**: Append company-specific or domain-specific context
+- **Combine prompts**: Mix elements for hybrid use cases
+- **Add domain knowledge**: Append company-specific or domain context
+
+See each prompt's README for specific customization guidance.
+
+## Project Organization
+
+### Structure
+
+```text
+ai-scratchpad/
+├── prompts/              # Main prompt collection (organized by use case)
+│   ├── development/      # Dev tools, architecture, debugging
+│   ├── technical-writing/ # Documentation, articles, guides
+│   └── productivity/     # Meetings, tasks, communication
+├── tools/                # Platform-specific integrations
+│   └── claude-code/      # Claude Code commands and configs
+├── resources/            # Guides, templates, examples
+│   ├── guides/           # Learning materials
+│   ├── templates/        # Contribution starters
+│   ├── examples/         # Real-world usage
+│   └── configs/          # Tool configurations
+└── docs/                 # Project documentation
+    ├── architecture.md   # Organizational philosophy
+    └── changelog.md      # Version history
+```
+
+See [docs/architecture.md](docs/architecture.md) for detailed rationale and design principles.
+
+### Prompt Structure
+
+Each prompt follows a consistent structure:
+
+```text
+prompts/{category}/{prompt-name}/
+├── README.md              # Usage guide and documentation
+├── prompt.md              # Main system prompt
+├── knowledge/             # Optional: Supporting documents
+│   ├── guidelines.md
+│   └── examples.md
+└── variants/              # Optional: Platform-specific versions
+    └── gpt.md
+```
+
+## Contributing
+
+We welcome contributions! Whether you have:
+
+- ✨ A new prompt to share
+- 🔧 Tool integrations or commands
+- 📖 Guides or best practices
+- 🐛 Bug fixes or improvements
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for:
+
+- Contribution guidelines
+- File structure requirements
+- Quality standards
+- Pull request process
+
+**Good First Contributions**:
+
+- Test existing prompts and report issues
+- Add examples to prompt READMEs
+- Improve documentation clarity
+- Share your customizations
 
 ## Prompt Engineering Tips
 
-### Structure Principles
+### Core Principles
 
-**Clear Role Definition**: Start with explicit role and expertise level
+#### 1. Clear Role Definition
+
 ```markdown
 You are a senior technical architect specializing in distributed systems...
 ```
 
-**Explicit Output Format**: Specify exactly how responses should be structured
+#### 2. Explicit Output Format
+
 ```markdown
 Always respond using this format:
 1. Summary (2-3 sentences)
@@ -146,62 +214,123 @@ Always respond using this format:
 3. Recommendations (actionable items)
 ```
 
-**Context Boundaries**: Define what the AI should and shouldn't do
+#### 3. Set Boundaries
+
 ```markdown
 Do not: Generate code without explanation
 Always: Explain trade-offs and alternatives
 ```
 
-### Knowledge Documents
+#### 4. Use Examples
 
-**Separation of Concerns**: Break complex prompts into modular knowledge docs
-- Main prompt = core behavior and role
-- Knowledge docs = specific guidelines, standards, examples
+Show desired behavior with concrete examples in your prompts.
 
-**Progressive Enhancement**: Layer knowledge docs by priority
-- Essential guidelines (always needed)
-- Contextual guidelines (specific scenarios)
-- Reference materials (examples, templates)
+See the full [Prompt Engineering Guide](resources/guides/prompt-engineering.md) for comprehensive techniques.
 
-### Testing and Iteration
+## Platform Comparison
 
-1. **Start simple**: Basic prompt first, add complexity gradually
-2. **Test edge cases**: Try unusual inputs, check consistency
-3. **Version control**: Track what works, document changes
-4. **Collect examples**: Save good outputs to refine prompts
+### Claude
 
-### Platform-Specific Optimization
+- Excels at nuanced reasoning and context
+- Strong with principle-based instructions
+- Natural conversational guidelines
+- Great for architecture and analysis tasks
 
-**GPT-4/5**:
-- Works well with structured formats and step-by-step instructions
-- Strong with role-playing and persona adherence
-- Benefits from explicit examples
+### ChatGPT (GPT-4/5)
 
-**Claude**:
-- Excels with nuanced context and reasoning
-- Responds well to conversational guidelines
-- Effective with principle-based instructions
+- Excellent with structured formats
+- Strong persona adherence
+- Effective with step-by-step instructions
+- Great for procedural and template-based tasks
 
-## Contributing
+### Cross-Platform
 
-Contributions are welcome! If you have prompts that work well for your use cases:
+Most prompts in this collection work across platforms. Variants are only provided when there are meaningful platform-specific optimizations.
 
-1. **Format**: Follow the existing structure (main prompt + knowledge docs)
-2. **Documentation**: Include a brief description of the prompt's purpose and best use cases
-3. **Testing**: Ensure the prompt works as intended on at least one major platform
-4. **Submit**: Open a Pull Request with your additions
+## Examples in Action
 
-Please keep prompts:
-- **Focused**: Each prompt should have a clear, specific purpose
-- **Reusable**: Avoid hardcoded personal/company-specific details
-- **Well-documented**: Include context on when and how to use it
+### Code Review Workflow
+
+```text
+1. Use UI Architect prompt
+2. Paste code for review
+3. Get structured feedback:
+   - Critical issues
+   - Quality improvements
+   - Best practice recommendations
+   - Security considerations
+```
+
+### Documentation Sprint
+
+```text
+1. Use Universal Content System prompt
+2. Specify audience level (beginner/intermediate/advanced)
+3. Provide API specs or code
+4. Get structured docs with examples
+```
+
+### Meeting Follow-up
+
+```text
+1. Use Meeting Summary prompt
+2. Paste transcript from Zoom/Teams
+3. Get structured output:
+   - Key decisions
+   - Action items with owners
+   - Follow-up questions
+```
+
+## FAQ
+
+**Q: Do these prompts work with local AI models?**
+A: Many do! Results vary by model capability. Test and adjust complexity as needed.
+
+**Q: Can I use these commercially?**
+A: Yes! MIT License - use, modify, and distribute freely.
+
+**Q: How do I know which prompt to use?**
+A: Browse by category based on your use case. Each prompt README explains when to use it.
+
+**Q: Can I combine multiple prompts?**
+A: Absolutely! Many users mix elements from different prompts for custom solutions.
+
+**Q: What if a prompt doesn't work well for my use case?**
+A: Customize it! See the prompt's README for customization guidance, or create a variant.
+
+## Roadmap
+
+Planned additions:
+
+- More prompt categories (data analysis, communication, automation)
+- Additional platform integrations (Cursor, VS Code, Gemini)
+- Workflow examples and integration patterns
+- Community ratings and feedback system
+- Multi-language translations
+
+See [issues](https://github.com/martinrojas/ai-scratchpad/issues) for active development.
+
+## Learn More
+
+- **[Contributing Guide](CONTRIBUTING.md)** - How to add prompts and resources
+- **[Architecture Doc](docs/architecture.md)** - Project organization philosophy
+- **[Prompt Engineering Guide](resources/guides/prompt-engineering.md)** - Learn to write effective prompts
+- **[Browse Templates](resources/templates/)** - Start creating your own prompts
+
+## Recognition
+
+This project builds on the collective knowledge of the AI community. Special thanks to all [contributors](https://github.com/martinrojas/ai-scratchpad/graphs/contributors).
 
 ## License
 
-MIT License - Feel free to use, modify, and distribute these prompts for any purpose.
+MIT License - See [LICENSE](LICENSE) for details.
+
+Feel free to use, modify, and distribute these prompts for any purpose.
 
 ---
 
-**Last Updated**: 2025-11-17
+**Last Updated**: 2025-11-20
 
-Found these prompts useful? Star the repo or share with your team!
+Found these prompts useful? ⭐ Star the repo or share with your team!
+
+**Questions or feedback?** Open an [issue](https://github.com/martinrojas/ai-scratchpad/issues) or [discussion](https://github.com/martinrojas/ai-scratchpad/discussions).
