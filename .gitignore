@@ -1,0 +1,52 @@
+# Deno
+.deno/
+deno.lock
+
+# Environment variables
+.env
+.env.local
+
+# Coverage reports
+coverage/
+.coverage/
+
+# Test outputs
+*.test.log
+
+# Build outputs
+dist/
+build/
+
+# Generated files
+views/*.md
+data/*.json
+data/*.jsonl
+!data/.gitkeep
+reports/*.pdf
+!reports/.gitkeep
+
+# Backups
+data/backups/
+*.backup.*
+
+# IDE
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Node (if needed for md-to-pdf)
+node_modules/
+package-lock.json
