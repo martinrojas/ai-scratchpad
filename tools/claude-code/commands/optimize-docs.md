@@ -75,12 +75,12 @@ When making significant changes, update relevant documentation:
 ### Documentation Structure
 
 For projects with 3+ documentation files, use organized directories:
-```
+
 /docs/
 ├── plans/          # Feature plans, migration strategies
 ├── architecture/   # System design, specifications
 └── decisions/      # Architecture Decision Records (ADRs)
-```
+
 
 ### File Naming Conventions
 
