@@ -59,10 +59,19 @@ Transform meeting transcripts into structured, actionable summaries
 
 ### [Claude Code](tools/claude-code/)
 
-Custom commands and configurations for Claude Code CLI and VS Code extension
+Commands, skills, and agent configurations for Claude Code CLI and VS Code extension
 
-- **[reload-context](tools/claude-code/commands/reload-context.md)**: Example context-loading command
-- Custom command templates and patterns
+- **Commands** — Slash commands triggered by the user
+  - [`/reload-context`](tools/claude-code/commands/reload-context-command.md) — Rebuild project context at conversation start
+  - [`/reflection`](tools/claude-code/commands/reflection-command.md) — Analyze a session and extract learnings
+  - [`/optimize-docs`](tools/claude-code/commands/optimize-docs-command.md) — Audit and maintain project documentation
+- **Skills** — Reusable capabilities Claude activates automatically
+  - [`analyze-document`](tools/claude-code/skills/analyze-document/SKILL.md) — Deep document analysis beyond summaries
+  - [`reload-context`](tools/claude-code/skills/reload-context/SKILL.md) — Auto-triggered context reload
+  - [`portkey-typescript-sdk`](tools/claude-code/skills/portkey-typescript-sdk/SKILL.md) — Portkey AI Gateway integration
+- **Agents** — Specialized agent personas for delegation
+  - [`senior-code-reviewer`](tools/claude-code/agents/senior-code-reviewer.md) — Comprehensive code review
+  - [`ui-engineer`](tools/claude-code/agents/ui-engineer.md) — Frontend implementation and review
 
 More platform integrations coming soon: Cursor, VS Code, ChatGPT configurations
 
@@ -144,7 +153,7 @@ ai-scratchpad/
 │   ├── technical-writing/ # Documentation, articles, guides
 │   └── productivity/     # Meetings, tasks, communication
 ├── tools/                # Platform-specific integrations
-│   └── claude-code/      # Claude Code commands and configs
+│   └── claude-code/      # Claude Code commands, skills, and agents
 ├── resources/            # Guides, templates, examples
 │   ├── guides/           # Learning materials
 │   ├── templates/        # Contribution starters
@@ -329,7 +338,7 @@ Feel free to use, modify, and distribute these prompts for any purpose.
 
 ---
 
-**Last Updated**: 2025-11-20
+**Last Updated**: 2026-04-05
 
 Found these prompts useful? ⭐ Star the repo or share with your team!
 
