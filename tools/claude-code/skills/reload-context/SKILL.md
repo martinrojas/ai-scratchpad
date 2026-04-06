@@ -1,3 +1,9 @@
+---
+name: reload-context
+description: Reload full project context at the start of a new conversation by reading living documentation, verifying current state, and identifying next steps.
+allowed-tools: Read, Glob, Grep, Task
+---
+
 # Reload Project Context
 
 **Purpose**: Reload full project context at the start of a new conversation by reading living documentation, verifying current implementation state, and identifying next steps.
@@ -8,7 +14,10 @@ Follow these steps in order to rebuild complete project context:
 
 ### Phase 1: Read Core Documentation
 
-1. **Read CLAUDE.md** - Project instructions, architecture, and current standards
+1. **Read project instruction file(s)** - `CLAUDE.md` and/or `AGENTS.md`
+   - If both exist: read both and note any conflicts
+   - If only one exists: use that file as the primary instruction source
+   - If neither exists: state this explicitly and continue with available project docs
    - Note: Key technologies, development commands, coding patterns
    - Pay special attention to: Documentation standards, styling guidelines, recent improvements
 
@@ -17,9 +26,9 @@ Follow these steps in order to rebuild complete project context:
    - Archived plans are in `/docs/archive/` (reference only, not active work)
 
 3. **Read each active plan** - Understand current objectives and status
-   - Note: What's marked as IN PROGRESS (🚧)
-   - Note: What's marked as COMPLETED (✅)
-   - Note: What's marked as PAUSED (⏸️)
+   - Note: What's marked as IN PROGRESS
+   - Note: What's marked as COMPLETED
+   - Note: What's marked as PAUSED
    - Identify: Next immediate steps listed in each plan
 
 ### Phase 2: Verify Implementation State
@@ -42,31 +51,31 @@ Follow these steps in order to rebuild complete project context:
 
 Provide a structured summary with these sections:
 
-#### 📊 Project Overview
+#### Project Overview
 - Project type and tech stack
 - Current development phase
 - Key architectural decisions
 
-#### 🎯 Active Work
+#### Active Work
 - List each active plan with status
 - What's in progress right now
 - What's blocked or paused
 
-#### ✅ Recent Completions
-- What was recently finished (from "Recent Improvements" in CLAUDE.md)
+#### Recent Completions
+- What was recently finished (from "Recent Improvements" in `CLAUDE.md` and/or `AGENTS.md`)
 - What was archived since last session
 
-#### 🔄 Implementation State
+#### Implementation State
 - What the Explore subagent found
 - Any discrepancies between docs and code
 - Current codebase health
 
-#### 🚀 Recommended Next Steps
+#### Recommended Next Steps
 - Prioritized list of next actions
 - Dependencies and prerequisites
 - Estimated effort/complexity
 
-#### ⚠️ Flags & Blockers
+#### Flags & Blockers
 - Any issues discovered
 - Missing information
 - Decisions needed
@@ -76,18 +85,18 @@ Provide a structured summary with these sections:
 Present findings in a clear, scannable format using:
 - Headers for organization
 - Bullet points for lists
-- Status indicators (✅ 🚧 ⏸️ ⚠️)
+- Status indicators where appropriate
 - Code references with `file_path:line_number` where relevant
 - Brief explanations (not just data dumps)
 
 ## Success Criteria
 
 After running this command, the user should have:
-- ✅ Complete understanding of current project state
-- ✅ Clear picture of what's in progress
-- ✅ Verified implementation matches documentation
-- ✅ Actionable next steps with context
-- ✅ Awareness of any blockers or issues
+- Complete understanding of current project state
+- Clear picture of what's in progress
+- Verified implementation matches documentation
+- Actionable next steps with context
+- Awareness of any blockers or issues
 
 ## Tips
 

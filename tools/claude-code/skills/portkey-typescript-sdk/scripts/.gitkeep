@@ -1,0 +1,6 @@
+# This directory contains executable scripts that agents can run.
+#
+# Examples:
+# - setup.ts - Automated setup scripts
+# - validate_config.ts - Configuration validation
+# - generate_client.ts - Code generation utilities

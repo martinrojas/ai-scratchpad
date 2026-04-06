@@ -37,7 +37,7 @@ ai-scratchpad/
 
 **`tools/`** - Platform integrations
 - Organized by **tool/platform** (claude-code, cursor, chatgpt)
-- Contains configs, commands, and tool-specific features
+- Contains commands, skills, agents, and tool-specific features
 - Separated from prompts to avoid confusion
 
 **`resources/`** - Supporting materials
@@ -128,21 +128,36 @@ Current categories reflect common use cases:
 
 ### Tool Structure
 
+Each tool directory contains platform-specific extensions organized by type:
+
 ```
 tools/{tool-name}/
 ├── README.md              # Setup and overview
-├── commands/              # Custom commands (if applicable)
-│   └── example-command.md
-├── configs/               # Configuration files
+├── commands/              # Slash commands (user-triggered)
+│   └── my-command.md
+├── skills/                # Auto-invoked capabilities
+│   └── my-skill/
+│       └── SKILL.md
+├── agents/                # Specialized agent configurations
+│   └── my-agent.md
+├── configs/               # Configuration files (if applicable)
 │   └── settings.json
-└── examples/              # Usage examples
+└── examples/              # Usage examples (if applicable)
     └── workflow-example.md
 ```
+
+**Extension types** (currently used by `claude-code/`):
+
+| Type | Directory | Trigger | Purpose |
+|------|-----------|---------|---------|
+| Commands | `commands/` | User types `/command-name` | Slash commands for specific workflows |
+| Skills | `skills/{name}/SKILL.md` | Auto-invoked when context matches | Reusable capabilities with YAML metadata |
+| Agents | `agents/` | Delegated via subagent system | Specialized personas for task delegation |
 
 ### When to Add a Tool Section
 
 Add a tool directory when:
-- The tool has a unique integration method (custom commands, configs)
+- The tool has a unique integration method (custom commands, configs, skills)
 - There are multiple tool-specific resources to organize
 - The integration is reusable by others
 
@@ -438,7 +453,7 @@ The structure is designed to accommodate:
 
 ---
 
-**Last Updated**: 2025-11-20
+**Last Updated**: 2026-04-05
 
 ## Questions or Suggestions?
 
